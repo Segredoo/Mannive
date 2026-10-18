@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Anniversary 9 Tahun</title>
+  
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Great+Vibes&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- LOADING PAGE (PIXEL GAME THEME) -->
+  <div id="loading">
+    <div class="pixel-box">
+      <h2 class="pixel-title">Sewamat Dedehhhhh</h2>
+      
+      <!-- Frame Foto Pixel Game -->
+      <div class="photo-frame" id="photoFrame" title="Klik untuk lihat foto">
+        <img src="assets/foto ayank.jpeg" alt="Foto Kenangan" />
+        <span class="pixel-badge">CLICK PHOTO</span>
+      </div>
+
+      <!-- Tombol Kembali Loading Foto -->
+      <button id="backBtn" class="btn-pixel hidden">Kembali</button>
+
+      <p class="loading-text">hay, penasaran bukan ini apa?</p>
+      
+      <div class="pixel-bar-container">
+        <div class="pixel-bar" id="pixelBar"></div>
+      </div>
+      <div class="loading-percent" id="loadingPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE (GALLERY & BINDER DOA) -->
+  <main id="main" class="hidden">
+    <header class="main-header">
+      <h1 class="main-title">Happy 9th Anniversary</h1>
+      <p class="main-subtitle">Scroll ke bawah sedikit dilambatin kalau mau denger lagu na hihihi....</p>
+    </header>
+
+    <!-- GALERI FOTO VERTIKAL -->
+    <section id="gallery">
+      <div class="vertical-slider" id="slider">
+        <div class="slide" data-color="#2a1e2d"><img src="assets/student.jpeg" alt="Foto 1" /></div>
+        <div class="slide" data-color="#1e2c30"><img src="assets/blue blue.jpeg" alt="Foto 2" /></div>
+        <div class="slide" data-color="#302a1e"><img src="assets/us.jpeg" alt="Foto 3" /></div>
+        <div class="slide" data-color="#1e3023"><img src="assets/we time.jpeg" alt="Foto 4" /></div>
+        <div class="slide" data-color="#301e25"><img src="assets/grid4.jpeg" alt="Foto 5" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/UNM.jpeg" alt="Foto 6" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/jgl.jpeg" alt="Foto 7" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/gandeng.jpeg" alt="Foto 8" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/class.jpeg" alt="Foto 9" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/before.jpeg" alt="Foto 10" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/hmw.jpeg" alt="Foto 11" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/lbrn.jpeg" alt="Foto 12" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/love.jpeg" alt="Foto 13" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/wiw.jpeg" alt="Foto 14" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/sedap.jpeg" alt="Foto 15" /></div>
+        <div class="slide" data-color="#251e30"><img src="assets/proud.jpeg" alt="Foto 16" /></div>
+      </div>
+    </section>
+
+    <!-- SECTION DOA FRAME KERTAS BINDER -->
+    <section id="doa" class="doa-section hidden-section">
+      <div class="binder-paper">
+        <div class="binder-holes">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        
+        <h2 class="doa-title">Doa & Harapan</h2>
+        
+        <div class="doa-content">
+          <p class="doa-text">
+            Selamat 9 tahun hubungan kita ya sayangku. Terima kasih sudah selalu ada, menemani Mamas dalam suka dan duka, serta bersabar menghadapi segala hal bersama-sama.
+          </p>
+          <p class="doa-text">
+            Doa dan harapan Mamas untuk hubungan kita kedepannya, semoga Allah SWT selalu melimpahkan kebahagiaan, kesehatan, keberkahan, dan melindungi cinta kita hingga ke jenjang yang lebih indah nantinya. Aamiin...
+          </p>
+        </div>
+      </div>
+
+      <button id="pleaseKlik" class="btn-please">Please Klik</button>
+    </section>
+  </main>
+
+  <!-- QUESTION PAGE (PIXEL GAME THEME) -->
+  <div id="question" class="hidden">
+    <div class="q-card">
+      <h1 class="q-text" id="qText">Kamu Sayang Mamas nggak?</h1>
+      <div class="btns" id="btnsGroup">
+        <button id="ya" class="btn-pixel btn-ya">ya sayang</button>
+        <button id="tidak" class="btn-pixel btn-tidak">tidak sayang</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP CUSTOM PIXEL GAME -->
+  <div id="pixelModal" class="pixel-modal hidden">
+    <div class="pixel-modal-content">
+      <p id="modalMsg">Masa Kamu Ga Sayang Mamas Syih 🥺</p>
+      <button id="modalOkBtn" class="btn-pixel">Oke Deh</button>
+    </div>
+  </div>
+
+  <!-- POPUP ARAHAN SETELAH TOMBOL MEMENUHI LAYAR -->
+  <div id="hintModal" class="pixel-modal hidden">
+    <div class="pixel-modal-content">
+      <p>Yey! Sekarang layar penuh cinta.<br><br>👉 Klik bebas dimana ada sesuatu mwehehee... 💖</p>
+    </div>
+  </div>
+
+  <!-- FINAL REVELATION PAGE -->
+  <div id="finalPage" class="hidden">
+    <div class="final-card">
+      <h1 class="final-title">I Love You More Than Forever....</h1>
+      
+      <!-- Frame Foto Final -->
+      <div class="final-photo-frame" id="finalPhotoFrame" title="Klik untuk lihat foto">
+        <img id="revealPhoto" src="assets/bwl.jpeg" alt="Final Foto Kita" class="pixel-blurred" />
+      </div>
+
+      <!-- Tombol Kembali Foto Final -->
+      <button id="backBtnFinal" class="btn-pixel hidden">Kembali</button>
+
+      <!-- Tombol & Pemutar Video di dalam Halaman -->
+      <div id="videoContainer" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <button id="playVideoBtn" class="final-song-btn">🎵 Putar Video Spesial</button>
+        
+        <video id="specialVideo" class="hidden" width="100%" controls style="max-width: 280px; border-radius: 8px; border: 3px solid #f1fa8c;">
+          <source src="assets/festival.mp4" type="video/mp4">
+          Browser kamu tidak mendukung pemutaran video.
+        </video>
+
+        <button id="backFromVideoBtn" class="btn-pixel hidden">Tutup Video & Kembali</button>
+      </div>
+
+      <!-- Tombol WhatsApp -->
+      <a class="final-song-btn" href="https://wa.me/6282268187995" target="_blank">
+        💬 Chat WhatsApp Mamas
+      </a>
+    </div>
+  </div>
+
+  <!-- AUDIO BACKGROUND -->
+  <audio id="lagu" src="assets/Payung Teduh - Untuk Perempuan Yang Sedang Dalam Pelukan ().mp3" loop preload="auto"></audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
