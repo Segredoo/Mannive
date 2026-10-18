@@ -37,24 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const backFromVideoBtn = document.getElementById('backFromVideoBtn');
 
   // ==========================================
-  // 🎵 OTOMATIS PUTAR LAGU DARI LOADING PAGE
+  // 🎵 OTOMATIS PUTAR LAGU DARI LOADING PAGE (DIPERBAIKI UNTUK HP)
   // ==========================================
-  function startAudio() {
-    lagu.currentTime = 0;
-    lagu.play().catch(() => {
-      // Mengatasi kebijakan browser jika autoplay diblokir sebelum ada interaksi
-      const unlockAudio = () => {
-        lagu.play();
-        document.removeEventListener('click', unlockAudio);
-        document.removeEventListener('touchstart', unlockAudio);
-      };
-      document.addEventListener('click', unlockAudio);
-      document.addEventListener('touchstart', unlockAudio);
+  function unlockAndPlayAudio() {
+    lagu.play().then(() => {
+      // Jika berhasil memutar lagu, hapus listener
+      document.removeEventListener('click', unlockAndPlayAudio);
+      document.removeEventListener('touchstart', unlockAndPlayAudio);
+    }).catch(() => {
+      // Menunggu sentuhan atau interaksi pertama pengguna di HP
     });
   }
 
-  // Panggil musik begitu halaman dimuat
-  startAudio();
+  // Coba jalankan pemutaran awal
+  unlockAndPlayAudio();
+
+  // Tambahkan event listener untuk membuka akses audio saat ada sentuhan pertama di layar HP
+  document.addEventListener('click', unlockAndPlayAudio, { once: true });
+  document.addEventListener('touchstart', unlockAndPlayAudio, { once: true });
 
   // ==========================================
   // 1. LOADING PAGE (10 DETIK)
